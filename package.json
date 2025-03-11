@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "jsvectormap": "^1.6.0",
+    "svgmap": "^2.12.2",
     "vue": "^2.6.11",
     "vuevectormap": "1.0.8"
   },

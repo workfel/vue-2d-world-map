@@ -38,51 +38,9 @@ export default {
   mounted() {
     this.map = this.$refs.map.getMap();
     this.map.scale = 2;
-
-    // this.map.onRegionTooltipShow((event, tooltip) => {
-    //   console.log(event);
-    //   console.log(tooltip);
-    // });
-    // new svgMap({
-    //   targetElementID: "svgMap",
-    //   initialZoom: 4,
-    //   zoomScaleSensitivity: 0.5,
-    //   flagType : "image",
-    //   data: {
-    //     data: {
-    //       countRace: {
-    //         name: "Count Race",
-    //         format: "{0}",
-    //         thousandSeparator: ",",
-    //         thresholdMax: 10,
-    //         thresholdMin: 1,
-    //       },
-    //     },
-    //     applyData: "countRace",
-    //     values: {
-    //       FR: { countRace: 10 },
-    //       US: { countRace: 1 },
-    //       EG: { countRace: 1 },
-    //       DE: { countRace: 2 },
-    //       ES: { countRace: 6 },
-    //       // ...
-    //     },
-    //   },
-    //   noDataText: "Pas de course réalisée",
-    // });
   },
   data: () => ({
     map: null,
-
-    // Start markers
-    // markers: [
-    //   { name: "Palestine", coords: [31.5, 34.8] },
-    //   { name: "Russia", coords: [61, 105] },
-    // ],
-    // markerStyle: {},
-    // markerLabelStyle: {},
-    // selectedMarkers: [0],
-
     // Regions
     regionStyle: {
       initial: { fill: "#ccc" },

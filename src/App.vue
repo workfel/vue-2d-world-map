@@ -8,6 +8,7 @@
       :labels="labels"
       :series="series"
       :markers="markers"
+      :showTooltip="false"
       :selectedMarkers="selectedMarkers"
       :markersSelectable="true"
       :markersSelectableOne="true"
@@ -37,6 +38,11 @@ export default {
   mounted() {
     this.map = this.$refs.map.getMap();
     this.map.scale = 2;
+
+    // this.map.onRegionTooltipShow((event, tooltip) => {
+    //   console.log(event);
+    //   console.log(tooltip);
+    // });
     // new svgMap({
     //   targetElementID: "svgMap",
     //   initialZoom: 4,
@@ -113,11 +119,12 @@ export default {
       return {
         markers: {
           render(marker) {
-            return marker.name;
+            return marker.name + " " + marker.countRace;
           },
         },
       };
     },
+
   },
 };
 </script>

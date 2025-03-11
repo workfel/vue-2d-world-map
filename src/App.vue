@@ -1,6 +1,24 @@
 <template>
   <div id="app">
-    <div id="svgMap"></div>
+    <!-- <div id="svgMap"></div> -->
+    <vuevectormap
+      ref="map"
+      width="750px"
+      height="100vh"
+      :labels="labels"
+      :series="series"
+      :markers="markers"
+      :selectedMarkers="selectedMarkers"
+      :markersSelectable="true"
+      :markersSelectableOne="true"
+      :markerStyle="markerStyle"
+      :markerLabelStyle="markerLabelStyle"
+      :selectedRegions="selectedRegions"
+      :regionsSelectable="true"
+      :regionsSelectableOne="true"
+      :regionStyle="regionStyle"
+      :regionLabelStyle="regionLabelStyle"
+    ></vuevectormap>
   </div>
 </template>
 <style>
@@ -15,40 +33,37 @@ body {
 }
 </style>
 <script>
-import svgMap from "svgmap";
-import "svgmap/dist/svgMap.min.css";
 export default {
   mounted() {
-    // this.map = this.$refs.map.getMap();
-    // // You can now access all Jsvectormap's methods.
-    // console.log(this.map);
-
-    // this.map.scale = 2;
-    new svgMap({
-      targetElementID: "svgMap",
-      initialZoom: 4,
-      data: {
-        data: {
-          countRace: {
-            name: "Count Race",
-            format: "{0}",
-            thousandSeparator: ",",
-            thresholdMax: 10,
-            thresholdMin: 1,
-          },
-        },
-        applyData: "countRace",
-        values: {
-          FR: { countRace: 10 },
-          US: { countRace: 1 },
-          EG: { countRace: 1 },
-          DE: { countRace: 2 },
-          ES: { countRace: 6 },
-          // ...
-        },
-      },
-      noDataText: "Pas de course réalisée",
-    });
+    this.map = this.$refs.map.getMap();
+    this.map.scale = 2;
+    // new svgMap({
+    //   targetElementID: "svgMap",
+    //   initialZoom: 4,
+    //   zoomScaleSensitivity: 0.5,
+    //   flagType : "image",
+    //   data: {
+    //     data: {
+    //       countRace: {
+    //         name: "Count Race",
+    //         format: "{0}",
+    //         thousandSeparator: ",",
+    //         thresholdMax: 10,
+    //         thresholdMin: 1,
+    //       },
+    //     },
+    //     applyData: "countRace",
+    //     values: {
+    //       FR: { countRace: 10 },
+    //       US: { countRace: 1 },
+    //       EG: { countRace: 1 },
+    //       DE: { countRace: 2 },
+    //       ES: { countRace: 6 },
+    //       // ...
+    //     },
+    //   },
+    //   noDataText: "Pas de course réalisée",
+    // });
   },
   data: () => ({
     map: null,

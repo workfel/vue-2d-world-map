@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import VueVectorMap from "vuevectormap";
 import "jsvectormap/dist/maps/world.js";
-import "jsvectormap/dist/css/jsvectormap.css";
+import "jsvectormap/dist/jsvectormap.css";
 
 Vue.config.productionTip = false;
 
